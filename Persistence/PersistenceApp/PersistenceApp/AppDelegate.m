@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Persistence.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.persistence = [[Persistence alloc] init];
+    [self createObjects];
+    [self fetchObjects];
     return YES;
 }
 
@@ -40,6 +44,35 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void) createObjects {
+    NSManagedObject *iPad = [NSEntityDescription insertNewObjectForEntityForName:@"Gadget" inManagedObjectContext:self.persistence.managedObjectContext];
+    [iPad setValue:@"iPad" forKey:@"name"];
+    [iPad setValue:@499.0f forKey:@"price"];
+    
+    NSManagedObject *iPadMini = [NSEntityDescription insertNewObjectForEntityForName:@"Gadget" inManagedObjectContext:self.persistence.managedObjectContext];
+    [iPadMini setValue:@"iPad Mini" forKey:@"name"];
+    [iPadMini setValue:@329.0f forKey:@"price"];
+    
+    NSManagedObject *iPhone = [NSEntityDescription insertNewObjectForEntityForName:@"Gadget" inManagedObjectContext:self.persistence.managedObjectContext];
+    [iPhone setValue:@"iPhone" forKey:@"name"];
+    [iPhone setValue:@199.0f forKey:@"price"];
+    
+    NSManagedObject *iPodTouch = [NSEntityDescription insertNewObjectForEntityForName:@"Gadget" inManagedObjectContext:self.persistence.managedObjectContext];
+    [iPodTouch setValue:@"iPod Touch" forKey:@"name"];
+    [iPodTouch setValue:@299.0f forKey:@"price"];
+    
+    [self.persistence saveContext];
+}
+
+- (void) fetchObjects {
+    NSFetchRequest *fetchReqeust = [NSFetchRequest fetchRequestWithEntityName:@"Gadget"];
+    NSArray *fetchArray = [self.persistence.managedObjectContext executeFetchRequest:fetchReqeust error:nil];
+    
+    for (NSManagedObject *gadget in fetchArray) {
+        NSLog(@"%@", gadget);
+    }
 }
 
 @end
