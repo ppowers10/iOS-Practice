@@ -15,7 +15,9 @@
 		93C61D661BB0F51D007DE7DF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C61D651BB0F51D007DE7DF /* Images.xcassets */; };
 		93C61D691BB0F51D007DE7DF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93C61D671BB0F51D007DE7DF /* LaunchScreen.xib */; };
 		93C61D751BB0F51D007DE7DF /* BookStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C61D741BB0F51D007DE7DF /* BookStoreTests.m */; };
-		93C61D8A1BB0FAC5007DE7DF /* BookCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C61D891BB0FAC5007DE7DF /* BookCategory.m */; };
+		93C61D961BB183D5007DE7DF /* Page.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C61D951BB183D5007DE7DF /* Page.m */; };
+		93C61D991BB183D6007DE7DF /* BookCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C61D981BB183D6007DE7DF /* BookCategory.m */; };
+		93C61D9C1BB183D6007DE7DF /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C61D9B1BB183D6007DE7DF /* Book.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +45,12 @@
 		93C61D6E1BB0F51D007DE7DF /* BookStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C61D731BB0F51D007DE7DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93C61D741BB0F51D007DE7DF /* BookStoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookStoreTests.m; sourceTree = "<group>"; };
-		93C61D881BB0FAC5007DE7DF /* BookCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookCategory.h; path = Model/BookCategory.h; sourceTree = "<group>"; };
-		93C61D891BB0FAC5007DE7DF /* BookCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookCategory.m; path = Model/BookCategory.m; sourceTree = "<group>"; };
+		93C61D941BB183D5007DE7DF /* Page.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Page.h; path = Model/Page.h; sourceTree = "<group>"; };
+		93C61D951BB183D5007DE7DF /* Page.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Page.m; path = Model/Page.m; sourceTree = "<group>"; };
+		93C61D971BB183D6007DE7DF /* BookCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookCategory.h; path = Model/BookCategory.h; sourceTree = "<group>"; };
+		93C61D981BB183D6007DE7DF /* BookCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookCategory.m; path = Model/BookCategory.m; sourceTree = "<group>"; };
+		93C61D9A1BB183D6007DE7DF /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Book.h; path = Model/Book.h; sourceTree = "<group>"; };
+		93C61D9B1BB183D6007DE7DF /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Book.m; path = Model/Book.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +135,12 @@
 		93C61D7E1BB0F7C2007DE7DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				93C61D881BB0FAC5007DE7DF /* BookCategory.h */,
-				93C61D891BB0FAC5007DE7DF /* BookCategory.m */,
+				93C61D941BB183D5007DE7DF /* Page.h */,
+				93C61D951BB183D5007DE7DF /* Page.m */,
+				93C61D971BB183D6007DE7DF /* BookCategory.h */,
+				93C61D981BB183D6007DE7DF /* BookCategory.m */,
+				93C61D9A1BB183D6007DE7DF /* Book.h */,
+				93C61D9B1BB183D6007DE7DF /* Book.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -236,10 +246,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				93C61D5B1BB0F51D007DE7DF /* AppDelegate.m in Sources */,
+				93C61D961BB183D5007DE7DF /* Page.m in Sources */,
 				93C61D581BB0F51D007DE7DF /* main.m in Sources */,
 				93C61D611BB0F51D007DE7DF /* ViewController.m in Sources */,
-				93C61D8A1BB0FAC5007DE7DF /* BookCategory.m in Sources */,
 				93C61D5E1BB0F51D007DE7DF /* BookStore.xcdatamodeld in Sources */,
+				93C61D9C1BB183D6007DE7DF /* Book.m in Sources */,
+				93C61D991BB183D6007DE7DF /* BookCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
