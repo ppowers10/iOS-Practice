@@ -176,6 +176,8 @@
 
 - (void)showExampleData {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Book"];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"title = 'The first book'"];
+    
     
     NSArray *books = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     for (Book *book in books) {

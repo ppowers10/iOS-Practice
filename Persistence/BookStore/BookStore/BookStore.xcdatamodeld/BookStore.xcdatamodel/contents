@@ -5,6 +5,9 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookCategory" inverseName="books" inverseEntity="BookCategory" syncable="YES"/>
         <relationship name="pages" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Page" syncable="YES"/>
+        <fetchedProperty name="bargainBooks" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Book" predicateString="SELF.price &lt; 12 AND (SELF.category=$FETCH_SOURCE)"/>
+        </fetchedProperty>
     </entity>
     <entity name="BookCategory" representedClassName="BookCategory" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,7 +18,7 @@
     </entity>
     <elements>
         <element name="BookCategory" positionX="-45" positionY="0" width="128" height="73"/>
-        <element name="Book" positionX="252" positionY="-6" width="128" height="103"/>
+        <element name="Book" positionX="252" positionY="-6" width="128" height="131"/>
         <element name="Page" positionX="250" positionY="137" width="128" height="58"/>
     </elements>
 </model>

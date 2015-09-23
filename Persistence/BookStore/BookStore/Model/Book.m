@@ -18,4 +18,9 @@
 @dynamic category;
 @dynamic pages;
 
+- (void)awakeFromInsert {
+    [super awakeFromInsert];
+    NSLog(@"New book created");
+}
+
 @end
